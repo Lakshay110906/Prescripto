@@ -1,208 +1,265 @@
-# Prescripto — Healthcare Appointment Booking
+<div align="center">
 
-Prescripto is a full-stack healthcare appointment booking platform that helps patients discover doctors, schedule appointments, manage their profiles, and make payments online. It includes separate interfaces for patients, doctors, and administrators.
+# 🩺 Prescripto
 
-## Live Demo
+### A full-stack healthcare platform to find doctors, book appointments, and manage prescriptions.
 
-- **Patient website:** https://prescripto-frontend-kappa-six.vercel.app
-- **Admin and doctor panel:** https://prescripto-admin-beta-nine.vercel.app
-- **Backend API:** https://prescripto-backend-v6uc.onrender.com
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-success?style=for-the-badge)](https://prescripto-frontend-kappa-six.vercel.app/)
+[![Admin Panel](https://img.shields.io/badge/Admin%20%26%20Doctor-Dashboard-blue?style=for-the-badge)](https://prescripto-admin-beta-nine.vercel.app/)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
 
-> Demo availability may depend on the hosting services and configured environment variables.
+</div>
 
-## Features
+---
 
-### Patient website
-- Browse doctors and filter them by speciality.
-- Register and log in securely.
-- View and update profile information.
-- Select an available appointment slot and book appointments.
-- View upcoming appointments and cancel bookings.
-- Pay appointment fees through Razorpay.
-- Upload profile images using Cloudinary.
+## 📖 About The Project
 
-### Admin dashboard
-- View summary statistics for doctors, patients, and appointments.
-- Add doctors and manage the doctor list.
-- Change doctor availability.
-- Review and cancel appointments.
+**Prescripto** makes it easy for patients to see a doctor without long waiting lines or phone calls. Patients can browse doctors, pick a time that suits them, book an appointment, and pay the consultation fee online. Doctors and admins get their own dashboards to manage everything from one place.
 
-### Doctor dashboard
-- Sign in through the doctor interface.
-- View appointment schedules and dashboard statistics.
-- Mark appointments as completed or cancel them.
-- View and update doctor profile information.
+The project is built with the **MERN stack** and has three separate apps:
 
-## Tech Stack
+| App | Who uses it | What it does |
+| --- | --- | --- |
+| **Frontend** | Patients | Browse doctors, book and pay for appointments |
+| **Admin Panel** | Admins and Doctors | Manage doctors, appointments, and prescriptions |
+| **Backend** | All apps | REST API, database, authentication, and payments |
 
-| Area | Technologies |
+## 🔗 Live Links
+
+| App | Link |
 | --- | --- |
-| Patient and dashboard interfaces | React, Vite, React Router |
-| Styling | Tailwind CSS |
-| API requests and notifications | Axios, React Toastify |
-| Backend | Node.js, Express |
-| Database | MongoDB, Mongoose |
-| Authentication | JSON Web Tokens (JWT), bcrypt |
-| Image storage | Cloudinary |
-| Payments | Razorpay |
-| Deployment | Vercel (frontends), Render (API) |
+| 🌐 **Patient Website** | [prescripto-frontend-kappa-six.vercel.app](https://prescripto-frontend-kappa-six.vercel.app/) |
+| 🛠️ **Admin and Doctor Dashboard** | [prescripto-admin-beta-nine.vercel.app](https://prescripto-admin-beta-nine.vercel.app/) |
 
-## Project Structure
+> The Admin and Doctor dashboard is one app. On its login page, choose **Admin** or **Doctor** to sign in with that role.
 
-~~~text
+---
+
+## ✨ Features
+
+### 👤 For Patients
+- Browse the list of doctors and filter them by speciality
+- View a doctor's profile, fees, and availability
+- Book an appointment and pay the fee securely online
+- See and manage all your appointments in one place
+- Access and manage your prescriptions
+
+### 🧑‍⚕️ For Doctors
+- Log in to a separate dashboard
+- View and manage upcoming appointments
+- Manage prescriptions for patients
+
+### 🛠️ For Admins
+- Add and manage doctors on the platform
+- Monitor all appointments
+- Control the platform from a single admin panel
+
+### 🔐 Security and Integrations
+- **Role-based login** for Admins, Doctors, and Patients
+- **JWT** (JSON Web Tokens) for safe user sessions
+- **bcrypt** for hashing passwords, so they are never stored as plain text
+- **Razorpay** for secure online fee payments
+- **Cloudinary** for uploading and storing images (like doctor photos)
+- Fully **responsive design** that works on mobile, tablet, and desktop
+
+---
+
+## 🛠️ Tech Stack
+
+**Frontend and Admin Panel**
+- React.js
+- Tailwind CSS
+
+**Backend**
+- Node.js
+- Express.js
+
+**Database**
+- MongoDB
+
+**Authentication and Security**
+- JSON Web Tokens (JWT)
+- bcrypt
+
+**Third-party Services**
+- Razorpay (payments)
+- Cloudinary (media storage)
+
+**Deployment**
+- Vercel (frontend)
+
+---
+
+## 📁 Project Structure
+
+```
 Prescripto/
-├── frontend/      # Patient-facing React application
-├── admin/         # Admin and doctor dashboard
-├── backend/       # Express API, authentication, and database models
+├── frontend/     # Patient-facing website (React + Tailwind CSS)
+├── admin/        # Admin and Doctor dashboard (React + Tailwind CSS)
+├── backend/      # Node.js + Express REST API with MongoDB
+├── .vscode/
 ├── .gitignore
 └── README.md
-~~~
+```
 
-The backend exposes three main route groups:
+---
 
-- **/api/user** — registration, login, profile, appointments, and payments
-- **/api/doctor** — doctor login, profile, appointments, and dashboard
-- **/api/admin** — admin login, doctor management, appointments, and dashboard
+## 🚀 Getting Started
 
-## Run Locally
+Follow these steps to run Prescripto on your own computer.
 
-### 1. Requirements
+### Prerequisites
 
-Install Node.js (with npm) and make sure you have accounts or credentials for MongoDB, Cloudinary, and Razorpay. Use Razorpay test credentials for local development.
+Make sure you have these installed:
+- [Node.js](https://nodejs.org/) (v18 or higher)
+- [Git](https://git-scm.com/)
+- A [MongoDB](https://www.mongodb.com/) database (local or MongoDB Atlas)
+- A [Cloudinary](https://cloudinary.com/) account
+- A [Razorpay](https://razorpay.com/) account (test mode is fine)
 
-### 2. Clone the repository
+### 1. Clone the repository
 
-~~~bash
+```bash
 git clone https://github.com/Lakshay110906/Prescripto.git
 cd Prescripto
-~~~
+```
 
-### 3. Configure the backend
+### 2. Set up the Backend
 
-Create a **.env** file inside the **backend/** directory:
-
-~~~env
-PORT=4000
-MONGODB_URI=mongodb+srv://<username>:<password>@<cluster>.mongodb.net
-JWT_SECRET=replace_with_a_long_random_secret
-
-CLOUDINARY_NAME=your_cloudinary_cloud_name
-CLOUDINARY_API_KEY=your_cloudinary_api_key
-CLOUDINARY_SECRET_KEY=your_cloudinary_api_secret
-
-ADMIN_EMAIL=admin@example.com
-ADMIN_PASSWORD=replace_with_a_strong_password
-
-RAZORPAY_KEY_ID=your_razorpay_key_id
-RAZORPAY_KEY_SECRET=your_razorpay_key_secret
-CURRENCY=INR
-~~~
-
-The backend connects to the **prescripto** database. Ensure your MongoDB user has access to it and your network/IP settings allow the connection.
-
-Install dependencies and start the API:
-
-~~~bash
+```bash
 cd backend
 npm install
+```
+
+Create a `.env` file inside the `backend` folder:
+
+```env
+PORT=4000
+MONGODB_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
+
+# Admin login
+ADMIN_EMAIL=your_admin_email
+ADMIN_PASSWORD=your_admin_password
+
+# Cloudinary
+CLOUDINARY_NAME=your_cloud_name
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_SECRET_KEY=your_api_secret
+
+# Razorpay
+RAZORPAY_KEY_ID=your_key_id
+RAZORPAY_KEY_SECRET=your_key_secret
+CURRENCY=INR
+```
+
+Start the server:
+
+```bash
 npm run server
-~~~
+```
 
-The API runs on **http://localhost:4000** by default. You can also use **npm start** to start it with Node.js.
+### 3. Set up the Frontend
 
-### 4. Configure and start the patient website
-
-Create **frontend/.env**:
-
-~~~env
-VITE_BACKEND_URL=http://localhost:4000
-VITE_RAZORPAY_KEY_ID=your_razorpay_key_id
-~~~
-
-Then run:
-
-~~~bash
+```bash
 cd frontend
 npm install
-npm run dev
-~~~
+```
 
-Vite prints the local URL in the terminal, usually **http://localhost:5173**.
+Create a `.env` file inside the `frontend` folder:
 
-### 5. Configure and start the admin/doctor dashboard
-
-Create **admin/.env**:
-
-~~~env
+```env
 VITE_BACKEND_URL=http://localhost:4000
-~~~
+VITE_RAZORPAY_KEY_ID=your_key_id
+```
 
-Then run in a separate terminal:
+Start the app:
 
-~~~bash
+```bash
+npm run dev
+```
+
+### 4. Set up the Admin Panel
+
+```bash
 cd admin
 npm install
+```
+
+Create a `.env` file inside the `admin` folder:
+
+```env
+VITE_BACKEND_URL=http://localhost:4000
+```
+
+Start the app:
+
+```bash
 npm run dev
-~~~
+```
 
-Vite will print the dashboard URL. If the default port is already in use, it may select another available port.
+> 💡 Run the backend, frontend, and admin panel in three separate terminals at the same time.
 
-> Restart the relevant Vite development server whenever you change a .env file.
+---
 
-## Environment Variables
+## 🔄 How It Works
 
-| Variable | Used by | Purpose |
-| --- | --- | --- |
-| MONGODB_URI | Backend | MongoDB connection string; the app appends /prescripto |
-| JWT_SECRET | Backend | Secret used to sign authentication tokens |
-| CLOUDINARY_NAME | Backend | Cloudinary cloud name |
-| CLOUDINARY_API_KEY | Backend | Cloudinary API key |
-| CLOUDINARY_SECRET_KEY | Backend | Cloudinary API secret |
-| ADMIN_EMAIL | Backend | Admin login email |
-| ADMIN_PASSWORD | Backend | Admin login password |
-| RAZORPAY_KEY_ID | Backend | Razorpay API key ID |
-| RAZORPAY_KEY_SECRET | Backend | Razorpay API secret |
-| CURRENCY | Backend | Currency configured for payment orders |
-| VITE_BACKEND_URL | Frontend and admin | Base URL of the backend API |
-| VITE_RAZORPAY_KEY_ID | Frontend | Razorpay key ID used by the checkout interface |
+1. A **patient** signs up, logs in, and browses doctors.
+2. The patient picks a doctor and a time slot, then books an appointment.
+3. The fee is paid securely through **Razorpay**.
+4. The **doctor** sees the new appointment in their dashboard.
+5. The **admin** keeps an eye on doctors and appointments across the whole platform.
 
-Never commit real API keys, passwords, database credentials, or production secrets. Configure them through local environment files and your hosting provider's environment settings.
+---
 
-## Security Notes
+## 📸 Screenshots
 
-- Passwords are hashed with bcrypt before being stored.
-- JWT-based middleware protects authenticated API routes.
-- Keep Razorpay secret keys, Cloudinary secrets, and the JWT secret on the backend only.
-- Use test payment credentials during development and configure production credentials only in your deployment environment.
+> Add screenshots of your project here. Create a `screenshots` folder and link the images like this:
 
-## Development Commands
+```md
+![Home Page](./screenshots/home.png)
+![Doctors List](./screenshots/doctors.png)
+![Admin Dashboard](./screenshots/admin.png)
+```
 
-Run these commands from the relevant application directory:
+---
 
-| Directory | Command | Purpose |
-| --- | --- | --- |
-| frontend/ | npm run dev | Start patient website locally |
-| frontend/ | npm run build | Build patient website for production |
-| frontend/ | npm run lint | Run ESLint |
-| admin/ | npm run dev | Start admin/doctor dashboard locally |
-| admin/ | npm run build | Build dashboard for production |
-| admin/ | npm run lint | Run ESLint |
-| backend/ | npm run server | Start API with Nodemon |
-| backend/ | npm start | Start API with Node.js |
+## 🔮 Future Improvements
 
-## Future Improvements
+- Email or SMS reminders for upcoming appointments
+- Video consultations
+- Doctor reviews and ratings
+- Downloadable prescription PDFs
 
-- Automated tests for API routes and key user flows.
-- More robust validation, error handling, and rate limiting.
-- Appointment reminders and improved scheduling workflows.
-- Better observability and audit logs for administrative actions.
+---
 
-## Author
+## 🤝 Contributing
 
-**Lakshay Sharma**
+Contributions are welcome!
+
+1. Fork the project
+2. Create your branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m "Add some AmazingFeature"`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+---
+
+## 👨‍💻 Author
+
+**Lakshay**
+B.Tech Computer Science and Engineering, MSIT Delhi
 
 - GitHub: [@Lakshay110906](https://github.com/Lakshay110906)
 
 ---
 
-Built as a full-stack project to make doctor discovery and appointment management more convenient.
+<div align="center">
+
+⭐ If you like this project, please give it a star!
+
+</div>
